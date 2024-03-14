@@ -1,2 +1,2 @@
 # tugasjavascript
-ini adalah repository untuk tugas 1 
+ini adalah repository untuk Kumpulan tugas 
