@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Pegawai</title>
+</head>
+<body>
+  <h1>Data Pegawai</h1>
+  
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Nama Pegawai</th>
+        <th>Jabatan</th>
+        <th>Status</th>
+        <th>Gaji Pokok</th>
+        <th>Tunjangan Jabatan</th>
+        <th>BPJS</th>
+        <th>Tunjangan Keluarga</th>
+        <th>Total Gaji</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ridwan</td>
+        <td>Manager</td>
+        <td>Menikah</td>
+        <td id="gaji-pokok"></td>
+        <td id="tunjangan-jabatan"></td>
+        <td id="bpjs"></td>
+        <td id="tunjangan-keluarga"></td>
+        <td id="total-gaji"></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="3"></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th id="total-gaji-keseluruhan"></th>
+      </tr>
+    </tfoot>
+  </table>
+  
+  <script>
+    const namaPegawai = "Ridwan";
+    const jabatan = "Manager";
+    const status = "Menikah";
+
+    // Hitung gaji pokok
+    let gajiPokok = 0;
+    switch (jabatan) {
+      case "Manager":
+        gajiPokok = 15000000;
+        break;
+      case "Asisten Manager":
+        gajiPokok = 10000000;
+        break;
+      case "Staff":
+        gajiPokok = 5000000;
+        break;
+    }
+
+    // Hitung tunjangan jabatan
+    const tunjanganJabatan = gajiPokok * 0.15;
+
+    // Hitung BPJS
+    const bpjs = gajiPokok * 0.10;
+
+    // Hitung tunjangan keluarga
+    const tunjanganKeluarga = status === "Menikah" ? gajiPokok * 0.20 : 0;
+
+    // Hitung total gaji
+    const totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+    // Masukkan data ke tabel
+    document.getElementById("gaji-pokok").innerHTML = gajiPokok.toLocaleString("id-ID");
+    document.getElementById("tunjangan-jabatan").innerHTML = tunjanganJabatan.toLocaleString("id-ID");
+    document.getElementById("bpjs").innerHTML = bpjs.toLocaleString("id-ID");
+    document.getElementById("tunjangan-keluarga").innerHTML = tunjanganKeluarga.toLocaleString("id-ID");
+    document.getElementById("total-gaji").innerHTML = totalGaji.toLocaleString("id-ID");
+
+    // Hitung total gaji keseluruhan
+    const totalGajiKeseluruhan = totalGaji;
+
+    // Masukkan total gaji keseluruhan ke tabel
+    document.getElementById("total-gaji-keseluruhan").innerHTML = totalGajiKeseluruhan.toLocaleString("id-ID");
+  </script>
+</body>
+</html>
