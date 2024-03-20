@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+.animal {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    padding: 20px;
+    background-color: yellow;
+    border: 10px solid #333;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.animal:hover {
+    background-color: #f7f7f7;
+}
+
+/* CSS untuk setiap hewan */
+#div1 {
+    background: url('https://3.bp.blogspot.com/-TCjUqSiFYno/VVXBWuQiU5I/AAAAAAAAJww/mleVMfGNyPs/s1600/gambar%2Bbebek%2B(33).jpg');
+    background-size: cover;
+}
+
+#div2 {
+    background: url('https://2.bp.blogspot.com/-Q2VpmFFCmgk/UbFKR27g3wI/AAAAAAAAAXk/A4mUA-wUs84/s1600/Ayam+(4).jpg');
+    background-size: cover;
+}
+
+#div3 {
+    background: url('https://cdn-cas.orami.co.id/parenting/images/kucing_gemas-1.width-800.jpg');
+    background-size: cover;
+}
