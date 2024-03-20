@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <h2>Letakan Kursor ke masing-masing kotak untuk melihat gambar dan mendengar suara hewan</h2>
+    <div id="div1" class="animal">Hewan Bebek</div>
+    <div id="div2" class="animal">Hewan Ayam</div>
+    <div id="div3" class="animal">Hewan Kucing</div>
+
+    <!-- Audio for each animal -->
+    <audio id="sound1" src="Sound/cannard.mp3"></audio>
+    <audio id="sound2" src="Sound/som-de-galinha.mp3"></audio>
+    <audio id="sound3" src="Sound/cat-meow-mp3.mp3"></audio>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+        $("document").ready(function(){
+            $(".animal").mouseover(function(){
+                // Mengambil ID suara berdasarkan ID div
+                var soundID = $(this).attr('id').replace('div', 'sound');
+                // Memainkan suara
+                document.getElementById(soundID).play();
+            });
+
+            $(".animal").mouseout(function(){
+                // Menghentikan suara saat mouse keluar dari gambar
+                var soundID = $(this).attr('id').replace('div', 'sound');
+                document.getElementById(soundID).pause();
+                document.getElementById(soundID).currentTime = 0; // Mengembalikan suara ke awal
+            });
+
+            $("#div1").mouseover(function(){
+                $(this).css({
+                    background : "url('https://3.bp.blogspot.com/-TCjUqSiFYno/VVXBWuQiU5I/AAAAAAAAJww/mleVMfGNyPs/s1600/gambar%2Bbebek%2B(33).jpg')"
+                });
+            });
+
+            $("#div2").mouseover(function(){
+                $(this).css({
+                    background : "url('https://2.bp.blogspot.com/-Q2VpmFFCmgk/UbFKR27g3wI/AAAAAAAAAXk/A4mUA-wUs84/s1600/Ayam+(4).jpg')"
+                });
+            });
+
+            $("#div3").mouseover(function(){
+                $(this).css({
+                    background : "url('https://cdn-cas.orami.co.id/parenting/images/kucing_gemas-1.width-800.jpg')"
+                });
+            });
+            $("div").mouseout(function(){
+                $(this).css({
+                    background : "yellow"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
